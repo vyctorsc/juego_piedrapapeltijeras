@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Juego - Piedra , Papel, Tijeras</title>
+        <script>
+            //Funcion Random de numer
+            function numRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1 ) + min)
+            }
+ 
+            function eleccion(jugada){
+                let resultado = ""
+                if(jugada == 1){
+                    resultado = "Piedra 🪨"
+                }else if (jugada == 2) {
+                    resultado = "Papel 🧻"
+                } else if(jugada == 3) {
+                    resultado = "Tijeras ✂️"
+                } else {
+                    resultado = "Mal Elegido 😕"
+                }
+                return resultado
+            }
+            //1 es piedra
+            //2 es papel
+            //3 es Tijeras
+            let jugador = 0
+            let pc = numRandom(1, 3)
+
+            jugador = prompt("Elige: 1.Piedra, 2.Papel, 3.Tijeras")
+
+            //Se le envia lo que eligio cada judaor por parametro o argumentos,
+            //llamando o invocando dicha funcion nombrada eleccion.
+            alert("PC eligio --> " + eleccion(pc))
+            alert("TU eligiste --> " + eleccion(jugador))
+            
+            //COMBATE DEL GAME
+            if (pc == jugador) {
+                alert("EMPATE - ambos eligieron lo mismo")
+            }else if (jugador == 1 && pc == 3) {
+                alert("GANASTE ✔️")
+            }else if (jugador == 2 && pc == 1) {
+                alert("GANASTE ✔️")
+            } else if (jugador == 3 && pc == 2) {
+                alert("GANASTE ✔️")
+            } else {
+                alert("PERDISTE")
+            } 
+        </script>
+    </head>
+    <body>
+        <h1>Piedra , Papel, Tijeras</h1>
+    </body>
+</html>
